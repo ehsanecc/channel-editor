@@ -7,4 +7,4 @@ I made this software because I can't find any suitable Channel Editor for my CHN
 
 I will add some functionality like sorting by Alphabetic and Scramble channels in future.
 
-![alt text](https://github.com/ehsanecc/channel-editor/raw/master/sample1.git "Sample 1")
+![alt text](https://github.com/ehsanecc/channel-editor/blob/main/sample1.gif?raw=true "Sample 1")
