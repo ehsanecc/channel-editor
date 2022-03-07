@@ -6,3 +6,5 @@ This editor is written purely in Python 3.x to MOVE/DELETE channels in CHN files
 I made this software because I can't find any suitable Channel Editor for my CHN files!
 
 I will add some functionality like sorting by Alphabetic and Scramble channels in future.
+
+![alt text](https://github.com/ehsanecc/channel-editor/raw/master/sample1.git "Sample 1")
