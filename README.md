@@ -8,3 +8,5 @@ I made this software because I can't find any suitable Channel Editor for my CHN
 I will add some functionality like sorting by Alphabetic and Scramble channels in future.
 
 ![alt text](https://github.com/ehsanecc/channel-editor/blob/main/sample1.gif?raw=true "Sample 1")
+
+* It currently ONLY SUPPORT TV Channels and no radio channels exported!

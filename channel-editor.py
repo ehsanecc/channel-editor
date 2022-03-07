@@ -42,6 +42,34 @@ def gui_manipulate_lb(LB:Listbox, cmd:str):
                     LB.insert(i+1, b[0])
                     LB.itemconfig(i+1, {'bg':bC['background'][-1:][0]})
                     LB.selection_set(i+1)
+    elif cmd == 'T': # move top
+        s = LB.curselection()
+        if s:
+            index = 0
+            for i in s:
+                if i < LB.size():
+                    b = LB.get(i, i)
+                    bC = LB.itemconfig(i)
+                    LB.delete(i)
+                    LB.insert(index, b[0])
+                    LB.itemconfig(index, {'bg':bC['background'][-1:][0]})
+                    LB.selection_set(index)
+                    index += 1
+            LB.yview(0)
+    elif cmd == 'B': # move bottom
+        s = LB.curselection()
+        if s:
+            index = 0
+            for i in reversed(s):
+                if i < LB.size()-1:
+                    b = LB.get(i, i)
+                    bC = LB.itemconfig(i)
+                    LB.delete(i)
+                    LB.insert(LB.size()-index, b[0])
+                    LB.itemconfig(LB.size()-index-1, {'bg':bC['background'][-1:][0]})
+                    LB.selection_set(LB.size()-index-1)
+                    index += 1
+            LB.yview(LB.size())
     elif cmd == 'R': # remove
         s = LB.curselection()
         if s:
@@ -195,6 +223,8 @@ listboxChannels.pack()
 topFrame.pack(side=LEFT, padx=2.5, pady=2.5)
 
 bottomFrame = Frame(top)
+Button(bottomFrame, text='Move Top', command=lambda: gui_manipulate_lb(listboxChannels, 'T'), width=12).pack(side=TOP, pady=2.5)
+Button(bottomFrame, text='Move Bottom', command=lambda: gui_manipulate_lb(listboxChannels, 'B'), width=12).pack(side=TOP, pady=2.5)
 Button(bottomFrame, text='Move Up', command=lambda: gui_manipulate_lb(listboxChannels, 'U'), width=12).pack(side=TOP, pady=2.5)
 Button(bottomFrame, text='Move Down', command=lambda: gui_manipulate_lb(listboxChannels, 'D'), width=12).pack(side=TOP, pady=2.5)
 Button(bottomFrame, text='Delete', command=lambda: gui_manipulate_lb(listboxChannels, 'R'), width=12).pack(side=TOP, pady=2.5)
