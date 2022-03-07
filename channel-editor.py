@@ -2,7 +2,7 @@
 # Website: https://zaxis.ir/
 # #########################################
 
-# Feel free to change this source code for your needs!
+# Feel free to change this source code by your needs!
 
 from sys import argv
 import binascii, io, math, struct, zlib
@@ -34,7 +34,7 @@ def gui_manipulate_lb(LB:Listbox, cmd:str):
     elif cmd == 'D': # move down
         s = LB.curselection()
         if s:
-            for i in s:
+            for i in reversed(s):
                 if i < LB.size()-1:
                     b = LB.get(i, i)
                     bC = LB.itemconfig(i)
